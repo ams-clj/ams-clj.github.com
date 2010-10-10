@@ -1,5 +1,5 @@
 #+TITLE: Amsterdam Clojurians
-#+OPTIONS: H:1 num:nil toc:nil f:nil author:nil creator:nil timestamp:nil
+#+OPTIONS: H:1 num:nil toc:nil f:nil <:nil author:nil creator:nil timestamp:nil
 
 * *Amsterdam Clojurians* Meetup
    SCHEDULED: <%%(diary-float t 3 2) 18:00-21:00>
@@ -11,7 +11,7 @@
 science keep fun in computing. When it started out, it was an
 awful lot of fun..." -- Alan J. Perlis (April 1, 1922-February 7, 1990)
 #+END_QUOTE
-** [[amsterdam-clojurians@googlegroups.com][Email address]]
+** [[mailto:amsterdam-clojurians@googlegroups.com][Email address]]
 ** [[http://ams-clj.github.com/ams-clj.ics][Schedule]]
 ** [[http://groups.google.com/group/amsterdam-clojurians][Web site]]
 
