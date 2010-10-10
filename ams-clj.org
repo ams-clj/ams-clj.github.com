@@ -14,6 +14,7 @@ awful lot of fun..." -- Alan J. Perlis (April 1, 1922-February 7, 1990)
 ** [[mailto:amsterdam-clojurians@googlegroups.com][Email address]]
 ** [[http://ams-clj.github.com/ams-clj.ics][Schedule]]
 ** [[http://groups.google.com/group/amsterdam-clojurians][Web site]]
+** [[ams-clj.svg][Logo]]
 
 * [[http://www.nljug.org/jfall/][JFall]]
   SCHEDULED: <2010-11-03 Wed>
