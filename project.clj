@@ -1,4 +1,4 @@
 (defproject amsclj-website "1.0.0-SNAPSHOT"
-  :description "FIXME: write"
-  :dependencies [[org.clojure/clojure "1.2.0"]
-                   [org.clojure/clojure-contrib "1.2.0"]])
+  :description "Amsterdam Clojurians"
+  :dependencies [[org.clojure/clojure "1.2.1"]
+                 [feedparser-clj "0.1"]])
