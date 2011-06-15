@@ -1,11 +1,30 @@
 (ns bot
   (:use [feedparser-clj.core]))
 
-(def sources ["https://github.com/joodie.atom", "http://blog.remvee.net/rss.xml"])
+(def sources
+  (map #(str "https://github.com/" % ".atom")
+       ["adben"
+        "beatlevic"
+        "bulters"
+        "gmodena"
+        "joodie"
+        "LaPingvino"
+        "mdemare"
+        "neotyk"
+        "pepijndevos"
+        "remvee"
+        "rogier"
+        "rosejn"
+        "samaaron"
+        "skuro"
+        "Wijnand"]))
 
 (defn parse-source [source]
   (let [feed (parse-feed source)]
-    (map #(select-keys % [:contents :link :published-date :title]) (:entries feed))))
+    (map #(conj
+           (select-keys % [:contents :link :published-date :title])
+           [:author (-> % :authors first :name)])
+         (:entries feed))))
 
 (defn parse-all-sources []
-  ())
+  (sort-by :published-date (mapcat parse-source sources)))
