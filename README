@@ -2,22 +2,8 @@
 
 ## Usage
 
-  (do
-    (require 'web)
-    (use 'ring.adapter.jetty
-         'compojure.core
-         'ring.middleware.stacktrace
-         'web)
-      (wrap! app :stacktrace)
-    (future
-      (run-jetty (var app) {:port 8080})))
-
-## Installation
-
-FIXME: write
+  lein run -m web
 
 ## License
-
-Copyright (C) 2010 FIXME
 
 Distributed under the Eclipse Public License, the same as Clojure.

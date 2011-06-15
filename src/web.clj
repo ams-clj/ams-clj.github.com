@@ -3,9 +3,11 @@
    bot
    [hiccup.core]
    [hiccup.page-helpers]
-   [compojure.core            :only [defroutes GET]]
-   [ring.middleware.file      :only [wrap-file]]
-   [ring.middleware.file-info :only [wrap-file-info]]))
+   [compojure.core]
+   [compojure.route]
+   [ring.middleware.file]
+   [ring.middleware.file-info]
+   [ring.adapter.jetty]))
 
 (def title "Amsterdam.CLJ!")
 
@@ -39,3 +41,7 @@
   (compojure.route/not-found "duh.."))
 
 (def app (-> public-routes (wrap-file "public") wrap-file-info))
+
+(defn -main []
+  (let [port (Integer/parseInt (get (System/getenv) "PORT" "8080"))]
+    (run-jetty app {:port port})))
