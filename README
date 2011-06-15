@@ -1,10 +1,16 @@
 # amsclj-website
 
-FIXME: write description
-
 ## Usage
 
-FIXME: write
+  (do
+    (require 'web)
+    (use 'ring.adapter.jetty
+         'compojure.core
+         'ring.middleware.stacktrace
+         'web)
+      (wrap! app :stacktrace)
+    (future
+      (run-jetty (var app) {:port 8080})))
 
 ## Installation
 
