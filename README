@@ -4,6 +4,10 @@
 
   lein run -m web
 
+## deploy
+
+  git push heroku robot:master
+
 ## License
 
 Distributed under the Eclipse Public License, the same as Clojure.
