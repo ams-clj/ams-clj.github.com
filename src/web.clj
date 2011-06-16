@@ -14,15 +14,13 @@
 (defonce feed
   (memoize
    (fn []
-     (reverse (parse-all-sources)))))
+     (take 150 (reverse (parse-all-sources))))))
 
 (defn render-item [item]
   [:li
-   [:span.title (h (:title item))]
+   [:a.title {:href (h (:link item))} (h (:title item))]
    " "
-   [:span.date (h (str (:published-date item)))]
-   [:div.contents
-    (:value (first (:contents item)))]])
+   [:span.date (h (str (:published-date item)))]])
 
 (defn render-feed []
   (html
@@ -33,7 +31,8 @@
     [:body
      [:h1 title]
      [:ol
-      (map render-item (feed))]]]))
+      (map render-item (feed))
+      [:li [:em "etcetera etcetera.."]]]]]))
 
 (defroutes public-routes
   (GET "/" []
