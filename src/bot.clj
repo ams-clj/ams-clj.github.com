@@ -22,8 +22,9 @@
 (defn parse-source [source]
   (let [feed (parse-feed source)]
     (map #(conj
-           (select-keys % [:contents :link :published-date :title])
-           [:author (-> % :authors first :name)])
+           (select-keys % [:contents :link :title])
+           [:author (-> % :authors first :name)]
+           [:published-date (.getTime (:published-date %))]) ; can't (print) and (read) java.util.Date objects
          (:entries feed))))
 
 (defn parse-all-sources []

@@ -7,7 +7,9 @@
    [compojure.route]
    [ring.middleware.file]
    [ring.middleware.file-info]
-   [ring.adapter.jetty]))
+   [ring.adapter.jetty])
+  (:require
+   [store]))
 
 (def title "Amsterdam.CLJ!")
 
@@ -16,11 +18,14 @@
 (defn fetch-feed []
   (take 150 (reverse (parse-all-sources))))
 
-(def feed (atom (fetch-feed)))
+(def feed (atom (or
+                 (store/get :feed)
+                 (take 150 (reverse (parse-all-sources))))))
 
 (defn feed-updater [_]
-  (. Thread (sleep refresh-rate))
   (swap! feed (fn [_] (fetch-feed)))
+  (store/set :feed @feed)
+  (. Thread (sleep refresh-rate))
   (send-off *agent* feed-updater))
 
 (send-off (agent nil) feed-updater)
@@ -29,7 +34,7 @@
   [:li
    [:a.title {:href (h (:link item))} (h (:title item))]
    " "
-   [:span.date (h (str (:published-date item)))]])
+   [:span.date (h (str (java.util.Date. (:published-date item))))]])
 
 (defn render-feed []
   (html
