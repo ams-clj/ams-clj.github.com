@@ -1,17 +1,18 @@
 (ns web
-  (:use
-   bot
-   [hiccup.core]
-   [hiccup.page-helpers]
-   [compojure.core]
-   [compojure.route]
-   [ring.middleware.file]
-   [ring.middleware.file-info]
-   [ring.adapter.jetty])
-  (:require
-   [store]))
+  (:use [bot]
+        [hiccup.core]
+        [hiccup.page-helpers]
+        [compojure.core]
+        [compojure.route]
+        [ring.middleware.file]
+        [ring.middleware.file-info]
+        [ring.adapter.jetty])
+  (:require [store :as store]))
 
 (def title "Amsterdam.CLJ!")
+
+(defmacro ignore-exceptions [& body]
+  `(try (do ~@body) (catch Exception ~'_)))
 
 (def refresh-rate (* 15 60 1000))
 
@@ -23,8 +24,8 @@
                  (take 150 (reverse (parse-all-sources))))))
 
 (defn feed-updater [_]
-  (swap! feed (fn [_] (fetch-feed)))
-  (store/set :feed @feed)
+  (ignore-exceptions (swap! feed (fn [_] (fetch-feed))))
+  (ignore-exceptions (store/set :feed @feed))
   (. Thread (sleep refresh-rate))
   (send-off *agent* feed-updater))
 
@@ -48,13 +49,19 @@
       (map render-item @feed)
       [:li [:em "etcetera etcetera.."]]]]]))
 
-(defroutes public-routes
-  (GET "/" []
-       (render-feed))
+(defroutes handler
+  (GET "/" [] (render-feed))
   (compojure.route/not-found "duh.."))
 
-(def app (-> public-routes (wrap-file "public") wrap-file-info))
+(defn wrap-errors [app]
+  (fn [req] (try (app req)
+                 (catch Exception e
+                   (do
+                     (prn req) (.printStackTrace e)
+                     {:status 500, :body "auch!"})))))
+
+(def app (-> handler (wrap-file "public") wrap-file-info wrap-errors))
 
 (defn -main []
   (let [port (Integer/parseInt (get (System/getenv) "PORT" "8080"))]
-    (run-jetty app {:port port})))
+    (run-jetty (var app) {:port port})))

@@ -8,6 +8,10 @@
 
   git push heroku robot:master
 
+## blinkinglights
+
+  open http://ams-clj.herokuapp.com/
+
 ## License
 
 Distributed under the Eclipse Public License, the same as Clojure.
