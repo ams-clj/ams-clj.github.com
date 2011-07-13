@@ -3,14 +3,27 @@
   (:require [http.async.client :as c]
             [org.danlarkin.json :as json]))
 
-(def members
+(defn fetch-members
+  []
   (with-open [client (c/create-client)]
     (let [response (c/GET client "https://github.com/api/v2/json/organizations/ams-clj/public_members")]
       (map :login (:users (json/decode (c/string response)))))))
 
+(def members (atom (fetch-members)))
+
+(def refresh-members (* 1 60 1000))
+
+(defn members-updater
+  []
+  (Thread/sleep refresh-members)
+  (reset! members (fetch-members))
+  (recur))
+
+(. (Thread. members-updater) start)
+
 (def sources
   (map #(str "https://github.com/" % ".atom")
-       members))
+       @members))
 
 (defn parse-source [source]
   (let [feed (parse-feed source)]
