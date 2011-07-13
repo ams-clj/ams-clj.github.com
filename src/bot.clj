@@ -11,7 +11,7 @@
 
 (def members (atom (fetch-members)))
 
-(def refresh-members (* 1 60 1000))
+(def refresh-members (* 60 60 1000))
 
 (defn members-updater
   []
