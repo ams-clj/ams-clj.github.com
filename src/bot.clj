@@ -25,7 +25,7 @@
   (map #(str "https://github.com/" % ".atom")
        @members))
 
-(defn parse-source [source]
+(defn parse-members-feed [source]
   (let [feed (parse-feed source)]
     (map #(conj
            (select-keys % [:contents :link :title])
@@ -33,5 +33,12 @@
            [:published-date (.getTime (:published-date %))]) ; can't (print) and (read) java.util.Date objects
          (:entries feed))))
 
+(def atom-meetups-feed
+  "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/atom/The+Amsterdam+Clojure+Meetup+Group")
+
+(defn parse-meetups-feed [source]
+  (let [feed (parse-feed source)]
+    (map #(select-keys % [:link :updated-date]) (:entries feed))))
+
 (defn parse-all-sources []
-  (sort-by :published-date (mapcat parse-source sources)))
+  (sort-by :published-date (mapcat parse-members-feed sources)))

@@ -38,6 +38,10 @@
    " "
    [:span.date (h (str (java.util.Date. (:published-date item))))]])
 
+(defn render-event [event]
+  [:li
+   [:a.title {:href (h (:link event))} (h (. (:updated-date event) toString))]])
+
 (defn render-feed []
   (html
    [:html
@@ -46,9 +50,15 @@
      (include-css "screen.css")]
     [:body
      [:h1 title]
-     [:ol
-      (map render-item @feed)
-      [:li [:em "etcetera etcetera.."]]]]]))
+     [:table
+      [:tr
+       [:td
+        [:ol
+         (map render-item @feed)
+         [:li [:em "etcetera etcetera.."]]]]
+       [:td
+        [:ol
+         (map render-event (parse-meetups-feed atom-meetups-feed))]]]]]]))
 
 (defroutes handler
   (GET "/" [] (render-feed))
