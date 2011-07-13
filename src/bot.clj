@@ -1,23 +1,19 @@
 (ns bot
-  (:use [feedparser-clj.core]))
+  (:use [feedparser-clj.core])
+  (:require [http.async.client :as c]
+            [org.danlarkin.json :as json]))
+
+(def members
+  (with-open [client (c/create-client)]
+    (let [response (->> "https://github.com/api/v2/json/organizations/ams-clj/public_members"
+                        (c/GET client)
+                        c/await
+                        c/string)]
+      (map :login (:users (json/decode response))))))
 
 (def sources
   (map #(str "https://github.com/" % ".atom")
-       ["adben"
-        "beatlevic"
-        "bulters"
-        "gmodena"
-        "joodie"
-        "LaPingvino"
-        "mdemare"
-        "neotyk"
-        "pepijndevos"
-        "remvee"
-        "rogier"
-        "rosejn"
-        "samaaron"
-        "skuro"
-        "Wijnand"]))
+       members))
 
 (defn parse-source [source]
   (let [feed (parse-feed source)]

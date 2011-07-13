@@ -6,4 +6,6 @@
                  [ring/ring-jetty-adapter "0.3.5"]
                  [ring/ring-devel "0.3.5"]
                  [feedparser-clj "0.2"]
-                 [org.clojars.nathell/redis-clojure "1.2.7"]])
+                 [org.clojars.nathell/redis-clojure "1.2.7"]
+                 [org.danlarkin/clojure-json "1.1"]
+                 [http.async.client "0.3.1"]])

@@ -20,7 +20,8 @@
   (take 150 (reverse (parse-all-sources))))
 
 (def feed (atom (or
-                 (store/get :feed)
+                 ;;(store/get :feed)
+                 false
                  (take 150 (reverse (parse-all-sources))))))
 
 (defn feed-updater [_]
@@ -64,4 +65,4 @@
 
 (defn -main []
   (let [port (Integer/parseInt (get (System/getenv) "PORT" "8080"))]
-    (run-jetty (var app) {:port port})))
+    (run-jetty (var app) {:port port :join? false})))
