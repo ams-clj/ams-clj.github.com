@@ -5,11 +5,8 @@
 
 (def members
   (with-open [client (c/create-client)]
-    (let [response (->> "https://github.com/api/v2/json/organizations/ams-clj/public_members"
-                        (c/GET client)
-                        c/await
-                        c/string)]
-      (map :login (:users (json/decode response))))))
+    (let [response (c/GET client "https://github.com/api/v2/json/organizations/ams-clj/public_members")]
+      (map :login (:users (json/decode (c/string response)))))))
 
 (def sources
   (map #(str "https://github.com/" % ".atom")
