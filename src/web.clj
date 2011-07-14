@@ -19,10 +19,7 @@
 (defn fetch-feed []
   (take 150 (reverse (parse-all-sources))))
 
-(def feed (atom (or
-                 ;;(store/get :feed)
-                 false
-                 (take 150 (reverse (parse-all-sources))))))
+(def feed (atom (take 150 (reverse (parse-all-sources)))))
 
 (defn feed-updater [_]
   (ignore-exceptions (swap! feed (fn [_] (fetch-feed))))
@@ -50,15 +47,13 @@
      (include-css "screen.css")]
     [:body
      [:h1 title]
-     [:table
-      [:tr
-       [:td
-        [:ol
-         (map render-item @feed)
-         [:li [:em "etcetera etcetera.."]]]]
-       [:td
-        [:ol
-         (map render-event (parse-meetups-feed atom-meetups-feed))]]]]]]))
+     
+     [:ol.github-events
+      (map render-item @feed)
+      [:li [:em "etcetera etcetera.."]]]
+     
+     [:ol.meetups
+      (map render-event (parse-meetups-feed atom-meetups-feed))]]]))
 
 (defroutes handler
   (GET "/" [] (render-feed))

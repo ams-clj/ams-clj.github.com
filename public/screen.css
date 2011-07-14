@@ -1,3 +1,15 @@
+body {
+    margin: 2em 3em;
+}
+
+ol.github-events, ol.meetups {
+    overflow: auto;
+    margin: 1em 0;
+    padding: 0.3em;
+    list-style: none;
+    background-color: #fcfcfc;
+    max-height: 20em;
+}
 span.date {
     font-size: smaller;
     font-style: italic;
