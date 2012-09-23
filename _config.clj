@@ -25,14 +25,27 @@
  :site {:charset    "utf-8"
         :site-title "SKURO! -- Shading light"
         :twitter    "skuro"
-        :css        ["http://fonts.googleapis.com/css?family=Josefin+Sans"
-                     "/css/main.css"
-                     "/css/extra.css"]
-        :device-css ["/css/smartphone.css"]
-        :js         ["/js/main.js"]}
+        :css        ["/css/ie.css"
+                     ;"/css/print.css"
+                     "/css/programme.css"
+                     "/css/project.css"
+                     "/css/screen.css"
+                     "/css/960.css"
+                     ]
+        :js         ["js/jquery-1.3.1.min.js"
+                     "js/jquery-easing-compatibility.1.2.pack.js"
+                     "js/jquery-easing.1.2.pack.js"
+                     "js/jquery.validate.min.js"
+                     "js/coda-slider.1.1.1.js"
+                     "js/FancyZoom.js"
+                     "js/FancyZoomHTML.js"
+                     "js/functions.js"
+                     "js/scripts.js"
+                     "js/twitter.js"
+                     ]}
 
  ;; post file compile hook
- :compile-with-post ["index.html.clj" "atom.xml.clj"]
+ :compile-with-post ["index.html.clj"]
 
  ;; tag setting
  :tag-layout "tag"

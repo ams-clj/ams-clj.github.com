@@ -1,68 +1,121 @@
-;; Define template options here
-; @layout  default
-; @title   home
+; @layout default
+; @title Home Page
+; @format xml
 
-;; Your own function in template
-(defn page-header [[fs & rs]]
-  [:div {:class "page-header"}
-   [:h1 [:span fs] rs]])
+; //////////// FUNCTIONS //////////////////
 
-; Template is compiled with hiccup
-(header
-  (:title site)
-  (link "Jekyll" "https://github.com/mojombo/jekyll")
-  " inspired static site generator in Clojure")
+(defn arrow [direction]
+  [:a {:href "#"}
+   [:img {:src (str "images/featured-arrow-" direction ".png")
+          :alt ""}]])
 
-;; Sample posts
-(page-header "Sample posts")
-(post-list)
+(defn panel [{:keys [link title img alt body]} & panel-body]
+  [:div {:class "panel"}
 
-;; Sample post tags
-(page-header "Sample tags")
-(tag-list)
+   [:div {:class "projectImage"}
+    [:a {:href link
+         :title title}
+     [:img {:src img
+            :alt alt}]]]
 
-;; Template source
-(page-header "Template source")
-[:p "you can highlight your code with "
- (link "google-code-prettify" "http://code.google.com/p/google-code-prettify/")]
-#-CLOJURE
-;; Define template options here
-; @layout  default
-; @title   home
+   [:div {:class "projectDescription"}
+    panel-body]])
 
-;; Your own function in template
-(defn page-header [[fs & rs]]
-  [:div {:class "page-header"}
-   [:h1 [:span fs] rs]])
+(defn script [src]
+  [:script {:src src
+            :type "text/javascript"}])
 
-; Template is compiled with hiccup
-(header
-  (:title site)
-  (link "Jekyll" "https://github.com/mojombo/jekyll")
-  " inspired static site generator in Clojure")
+(defn button [href src title alt]
+  [:a {:href href
+        :title title}
+    [:img {:src src
+           :alt alt}]])
 
-;; Sample posts
-(page-header "Sample posts")
-(post-list)
+;///////////// TEMPLATE //////////////////
 
-;; Sample post tags
-(page-header "Sample tags")
-(tag-list)
+[:div {:class "container_12 medium"}
+ [:div {:id "featured"}
+  [:div {:id "stripNavL0"
+         :class "featured-arrow"}
+   (arrow "left")]
+  
+   ; start the carousel
+  [:div {:id "slider"}
+   [:div {:id "sliderc"
+          :class "csw"}
+    [:div {:class "panelContainer"}
 
-;; Template source
-(page-header "Template source")
-[:p "you can highlight your code with "
- (link "google-code-prettify" "http://code.google.com/p/google-code-prettify/")]
-#-CLJ
-CLJ
+     (panel {:link  "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"
+             :title "Meetup Page"
+             :img   "images/slider/00x.jpg"
+             :alt   "Official Meetup.com page"}
+            [:h1 "THE DUTCH Clo" [:i "j"] "ure COMMUNITY"]
+            [:p [:a {:href "http://clojure.org"
+                     :alt "Clojure official website"}
+                 "Clo" [:i "j"] "ure "]
+             "brings up the fun in functional programming languages. We  meet every second Wednesday of the month to talk about every thing Clo<i>j</i>ure, sometimes giving presentations, sometimes just having fun together."]
+            [:p {:class "Desc"}
+             [:span {:class "site"}
+              [:a {:href "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"}
+               "Meetup Page"]]])
 
-;; Document
-(page-header "Document")
-; Markdown like format with "p" function
-(p "See " (link "http://liquidz.github.com/misaki/demo"))
-CLOJURE
+     (panel {:link  "/october.html"
+             :title "THE DUTCH Clojure EVENT"
+             :img   "images/oct-logo.png"
+             :alt   "The biggest Clojure event in the Netherlands"}
+            [:h1 "THE DUTCH Clo" [:i "j"] "ure COMMUNITY"]
+            [:p [:a {:href "http://clojure.org"
+                     :alt "Clojure official website"}
+                 "Clo" [:i "j"] "ure "]
+             "brings up the fun in functional programming languages. We  meet every second Wednesday of the month to talk about every thing Clo<i>j</i>ure, sometimes giving presentations, sometimes just having fun together."]
+            [:p {:class "Desc"}
+             [:span {:class "site"}
+              [:a {:href "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"}
+               "Meetup Page"]]])
 
-;; Document
-(page-header "Document")
-; Markdown like format with "p" function
-(p "See " (link "http://liquidz.github.com/misaki/"))
+     ]]]
+
+  [:div {:id "stripNavR0"
+         :class "featured-arrow"}
+   (arrow "right")]]
+
+
+ ]
+
+[:div {:class "container_12 bottom"}
+
+  [:div {:class "grid_4"}
+   [:h2 "Last " [:span {:class "orange"} "tweets"]]
+   [:ul {:id "twitter_update_list"} [:li]]
+   (script "js/twitter.js")
+   (script "http://twitter.com/statuses/user_timeline/amsclj.json?callback=twitterCallback&amp;count=3")]
+
+  [:div {:class "grid_4"}
+   [:h2 "Boost your " [:span {:class "orange"} "Clojure"]]
+   [:p "By far and large, teaching is the best way to learning. We will love to teach you Clo<i>j</i>ure,
+          as well as having you present your brand new project or library you just discovered."]
+   [:h2 "Sponsors and " [:span {:class "orange"} "perks"]]
+   [:a {:href "http://www.oreilly.com" :title "O'Reilly Network"}
+    [:img {:src "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
+           :alt "O'Reilly Network"}]]]
+
+  [:div {:class "grid_4"}
+   [:h2 "Interested? " [:span {:class "orange"} "Get in touch"]]
+   
+   (button "https://twittwe.com/amsclj"
+           "images/contact/twitter.png"
+           "Twitter"
+           "")
+   
+   (button "https://github.com/ams-clj"
+           "images/contact/github.png"
+           "GitHub"
+           "")
+
+   (button "mailto:amsterdam-clojurians@googlegroups.com"
+           "images/contact/ggroup.png"
+           "Google Group"
+           "")]
+
+  [:div {:class "clear"}]]
+

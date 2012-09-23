@@ -1,0 +1,17 @@
+ul.program {
+    padding-left: 0px;
+}
+
+ul.program li {
+    list-style: none;
+    width: 100%;
+}
+
+ul.program li.dark {
+    background-color: lightgrey;
+}
+
+ul.program li span.time {
+    float: left;
+    width: 80px;
+}
