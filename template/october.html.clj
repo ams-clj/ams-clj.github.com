@@ -72,14 +72,36 @@
 
   [:div {:id "stripNavR0"
          :class "featured-arrow"}
-   (arrow "right")]]
-
-
- ]
+   (arrow "right")]]]
 
 [:div {:class "container_12 bottom"}
 
-  
+ [:div {:class "grid_8"}
+  [:h2 "The " [:span {:class "orange"} "program"]]
+  [:p "The agenda was finalized, stay tuned for the final schedule, to be published any time now!"]
+  [:p]
+  [:p {:class "Desc"}
+             [:span {:class "site"}
+              [:a {:href "#"}
+               "Coming soon"]]]
+  [:p]]
+ 
+ [:div {:class "grid_4"}
+  [:p "Sponsored " [:span {:class "orange"} "by"]]
+  (button "http://www.backbase.com"
+          "images/sponsors/backbase.png"
+          "Backbase"
+          "NextGen Portal Software")
+  [:h3 "&nbsp;"]
+  (button "http://gotocon.com/amsterdam-2013/"
+          "images/sponsors/goto.png"
+          "GOTO Conference"
+          "GOTO Conference Amsterdam 2013")
+  [:h3 "&nbsp;"]
+  (button "http://www.oreilly.com"
+           "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
+           "O'Reilly Network"
+           "")
+  ]
 
-  [:div {:class "clear"}]]
-
+ [:div {:class "clear"}]]

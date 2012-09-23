@@ -89,9 +89,10 @@
    [:p "By far and large, teaching is the best way to learning. We will love to teach you Clo<i>j</i>ure,
           as well as having you present your brand new project or library you just discovered."]
    [:h2 "Sponsors and " [:span {:class "orange"} "perks"]]
-   [:a {:href "http://www.oreilly.com" :title "O'Reilly Network"}
-    [:img {:src "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
-           :alt "O'Reilly Network"}]]]
+   (button "http://www.oreilly.com"
+           "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
+           "O'Reilly Network"
+           "")]
 
   [:div {:class "grid_4"}
    [:h2 "Interested? " [:span {:class "orange"} "Get in touch"]]
