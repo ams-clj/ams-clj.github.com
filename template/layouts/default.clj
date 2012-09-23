@@ -27,6 +27,10 @@
     text
     [:br]]])
 
+
+(defn spacer []
+  [:h3 "&nbsp;"])
+
 ; //////////// TEMPLATES //////////////////
 
 [:html

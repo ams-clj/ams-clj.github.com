@@ -89,6 +89,11 @@
    [:p "By far and large, teaching is the best way to learning. We will love to teach you Clo<i>j</i>ure,
           as well as having you present your brand new project or library you just discovered."]
    [:h2 "Sponsors and " [:span {:class "orange"} "perks"]]
+   (button "http://www.backbase.com"
+          "images/sponsors/backbase.png"
+          "Backbase"
+          "NextGen Portal Software")
+   (spacer)
    (button "http://www.oreilly.com"
            "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
            "O'Reilly Network"
@@ -110,7 +115,9 @@
    (button "mailto:amsterdam-clojurians@googlegroups.com"
            "images/contact/ggroup.png"
            "Google Group"
-           "")]
+           "")
+
+   (foobar "")]
 
   [:div {:class "clear"}]]
 
