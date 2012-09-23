@@ -23,7 +23,7 @@
 
  ;; default site data
  :site {:charset    "utf-8"
-        :site-title "SKURO! -- Shading light"
+        :site-title "Amsterdam Clojurians - The Dutch Clojure community"
         :twitter    "skuro"
         :css        ["/css/ie.css"
                      ;"/css/print.css"
