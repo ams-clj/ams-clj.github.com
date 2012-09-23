@@ -57,21 +57,15 @@
             [:p {:class "Desc"}
              [:span {:class "site"}
               [:a {:href "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"}
-               "Meetup Page"]]])
+               "Meetup.com Page"]]])
 
      (panel {:link  "/october.html"
-             :title "THE DUTCH Clojure EVENT"
-             :img   "images/oct-logo.png"
+             :title "October Amsterdam Clojure"
+             :img   "images/slider/001.jpg"
              :alt   "The biggest Clojure event in the Netherlands"}
-            [:h1 "THE DUTCH Clo" [:i "j"] "ure COMMUNITY"]
-            [:p [:a {:href "http://clojure.org"
-                     :alt "Clojure official website"}
-                 "Clo" [:i "j"] "ure "]
-             "brings up the fun in functional programming languages. We  meet every second Wednesday of the month to talk about every thing Clo<i>j</i>ure, sometimes giving presentations, sometimes just having fun together."]
-            [:p {:class "Desc"}
-             [:span {:class "site"}
-              [:a {:href "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"}
-               "Meetup Page"]]])
+            [:h1 "October Amsterdam Clojure"]
+            [:p "Every year around October we celebrate yet another Meetup birthday with a bigger event. We're busy organizing the 2012 edition, please hold your horses and wait until we'll make the Call For Papers public. In the meanwhile, go ahead and draft your proposal, we know you have something beautiful to disclose!"]            
+            )
 
      ]]]
 
