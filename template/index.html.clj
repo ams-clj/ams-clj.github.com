@@ -116,8 +116,7 @@
            "images/contact/ggroup.png"
            "Google Group"
            "")
-
-   (foobar "")]
+   ]
 
   [:div {:class "clear"}]]
 
