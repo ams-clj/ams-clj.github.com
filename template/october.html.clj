@@ -41,13 +41,11 @@
     :title "Welcome, coffee, geek chats in the hallway"}
    
    {:name "Gijs Stuurman"
-    :avatar (gravatar "e12be5f21fc3bd031442b8db500e82fc")
+    :avatar "images/speakers/gijs.png"
     :time "9:30"
     :title "Simpler webapps with Clojure"
-    :abstract "Showing a small Ring webapp and how to test the Ring routes with Kerodon.
-
-This practical subject will highlight the following points in Clojure: immutable data, composing functions, the threading macro."
-    :bio "Coming soon"}
+    :abstract "An introduction to Clojure using web programming as an example. Will show how the abstractions and philosophies of Clojure can be combined to build and test software."
+    :bio "Got started with Clojure by using it for the software for my Master thesis. Now a full-time Clojure programmer at a start-up."}
 
    {:name "Edoardo Causarano"
     :avatar (gravatar "1d775a2f4e6b149ece61d0a79016acc0")
@@ -62,7 +60,12 @@ This practical subject will highlight the following points in Clojure: immutable
     :avatar (gravatar "76006c10b0773e69a6fcd70614ac258f")
     :time "11:15"
     :title "Functional Clojure: Sequences"
-    :bio "Coming soon"}
+    :bio "Joost is a freelance software developer based in Utrecht, the
+Netherlands, who is interested in functional programming techniques as
+a way of maintaining clarity while growing systems. He's currently
+working for a number of clients building high-traffic, web-based
+systems in Clojure and Ruby. He's also got a very nice apartment in
+Utrecht for sale."}
 
    {:name "Michał Marczyk"
     :avatar (gravatar "0f3d9e9dc3fb2c846327aaf805f01773")
@@ -76,48 +79,43 @@ This practical subject will highlight the following points in Clojure: immutable
    {:time "14:00"
     :title "(Un)Conference"}
 
-   {:name "Rodrigo B. Pimentel"
-    :avatar (gravatar "3d8c280edaafd988742f45e81f89d24a")
-    :time "15:30"
-    :title "First steps to running Clojure on Google AppEngine"
-    :abstract "Google App Engine makes it really easy to develop and deploy web applications.
-
-We will show you how to get your Clojure web applications running on it, in simple terms. We will present a sample application to demonstrate howto use App Engine's services from Clojure."
-    :bio "Coming soon"}
-
-   {:name "Oleksandr Petrov"
-    :avatar (gravatar "0895d796f866a9fc802350dbed192eb7")
-    :time "16:15"
-    :title "You and your system. Learning more about each other"
-    :abstract "How do you aggregate metrics from your systems? Is it painful? 
-How do you analyze the aggregated data? Isn't it even more painful?
-How do you vizualize it? Well, that's something else, too.
-
-I'm going to talk about not-yet-releazed project, started under Clojurewerkz.org, that's intended to solve forementioned problems, providing you with a set of tools to aggregate, analyze and visualize very large amounts arbitrary data (speak: terabytes) with ease, using only best tools for the job.
-
-It's all written in Clojure, of course!  
-"
-    :bio "Coming soon"}
-
-   {:time "17:00"
-    :title "Coffee break"}
-
-   {:name "Giacomo Cosenza"
-    :avatar (gravatar "704b6c1c37067920186e3198b64f1ad5")
-    :time "17:15"
-    :title "Teaching Clojure to math grads"
-    :bio "Coming soon"}
-
    {:name "Meikel Brandmeyer"
     :avatar "images/speakers/kotarak.png"
-    :time "18:00"
+    :time "15:30"
     :title "Rocking the Gradle - with Clojure"
     :abstract "While leiningen is omni-present in the Clojure world, there are other build systems out there which are worth considering. Besides the “old ones” – ant and maven – there are also quite new systems. One of those is gradle.
 
 We will explore the motivation for gradle, its aims and its philosophy, see a little bit of theory on how it works and finally build some examples in a live demonstration.
 "
     :bio "I'm a mathematician using Clojure since early 2008. As an early adopter I became a clojure toolsmith working on the Vim integration – VimClojure – as well as the gradle plugin for Clojure – clojuresque. I try to help with common tooling like eg. <a href=\"https://github.com/clojure/tools.nrepl\">nrepl</a>."}
-   
+
+   {:name "Oleksandr Petrov"
+    :avatar "images/speakers/apetrov.png"
+    :time "16:15"
+    :title "You and your system. Learning more about each other"
+    :abstract "Both infrastructure and application that runs on it are beautiful, and you know it. But do you know everything about them? Do you have a centralized storage of events that occur there? Can you correlate conversion and number of visitors with CPU peaks? Or plan an amount of hardware you'll require to run your service in a month, or even a year? Get all that data, and start making sense of it by using a very simple toolchain."
+    :bio "Alex works for StyleFruits, a leading platform for mode in Germany, before that was developing software to manage payment terminals, gates in airport areas and business centers. With Clojure for about 1 year, but fell in love with it from the day one, and found ClojureWerkz together with Michael Klishin, a collection of Clojure libraries, each one of which just werkz. Also, writes boring bio blurbs for conferences.
+"}
+
+   {:time "17:00"
+    :title "Coffee break"}
+
+   {:name "Giacomo Cosenza"
+    :avatar "images/speakers/gcosenza.png"
+    :time "17:15"
+    :title "Teaching Clojure to math grads"
+    :bio "Coming soon"}
+
+   {:name "Rodrigo B. Pimentel"
+    :avatar (gravatar "3d8c280edaafd988742f45e81f89d24a")
+    :time "18:00"
+    :title "First steps to running Clojure on Google AppEngine"
+    :abstract "Google App Engine makes it really easy to develop and deploy web applications.
+
+We will show you how to get your Clojure web applications running on it, in simple terms. We will present a sample application to demonstrate howto use App Engine's services from Clojure."
+    :bio "Coming soon"}
+
+      
    ])
 
 (defn track [{:keys [time name title abstract]} class]
@@ -161,15 +159,18 @@ We will explore the motivation for gradle, its aims and its philosophy, see a li
             [:h1 "THE DUTCH Clo" [:i "j"] "ure EVENT"]
             [:p [:span {:class "orange"} "October Amsterdam Clojure"]
              " is the Dutch stage for functional geeks, lots of parenthesis and fun, all in a spicy "
-             [:span {:class "orange"} "LISP"] " sauce! The 2012 edition will be held at Backbase Headquarters in Amsterdam on " [:span {:class "orange"} "Saturday October 27th."]
-             [:p "The event is always " [:span {:class "orange"} "FREE"]]])
+             [:span {:class "orange"} "LISP"] " sauce! The 2012 edition will be held at Backbase Headquarters in Amsterdam on " [:span {:class "orange"} "Saturday October 27th. "] "The event is always " [:span {:class "orange"} "FREE"]
+             [:p {:class "Desc"}
+             [:span {:class "site"}
+              [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
+               "Directions to the venue"]]]])
 
      (panel {:link  "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"
              :title "HOW TO JOIN"
              :img   "images/map.png"
              :alt   "The biggest Clojure event in the Netherlands"}
             [:h1 "HOW TO JOIN"]
-            [:p "The event is completely " [:span {:class "orange"} "free"] " for anyone to join. Unfortunately, space limitations requires us to ask you to sign up. The official registration form will soon be available on our " [:span {:class "orange"} "Meetup"] " page."
+            [:p "The event is completely " [:span {:class "orange"} "FREE"] " for anyone to join. Unfortunately, space limitations requires us to ask you to sign up. The official registration form will soon be available on our " [:span {:class "orange"} "Meetup"] " page."
              [:br]
              "Be sure to book your seat or you'll seriously risk to miss the hottest event this fall!"]
             [:p {:class "Desc"}
