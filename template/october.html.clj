@@ -60,6 +60,9 @@
     :avatar (gravatar "76006c10b0773e69a6fcd70614ac258f")
     :time "11:15"
     :title "Functional Clojure: Sequences"
+    :abstract "One of the fundamental abstractions in Clojure is the sequence. This
+talk introduces the sequence abstraction and some of the very useful
+functional idioms in the Clojure core library that are based on it."
     :bio "Joost is a freelance software developer based in Utrecht, the
 Netherlands, who is interested in functional programming techniques as
 a way of maintaining clarity while growing systems. He's currently
@@ -214,6 +217,9 @@ We will show you how to get your Clojure web applications running on it, in simp
            "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
            "O'Reilly Network"
            "")
+
+  [:p "Goodies and " [:span {:class "orange"} "props"]]
+  
   ]
 
  [:div {:class "clear"}]]
