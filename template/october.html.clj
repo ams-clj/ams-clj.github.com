@@ -34,6 +34,9 @@
 (defn gravatar [hash]
   (str "http://www.gravatar.com/avatar/" hash))
 
+(defn orange [text]
+  [:span {:class "orange"} text])
+
 (def tracks
   [
 
@@ -201,6 +204,10 @@ We will show you how to get your Clojure web applications running on it, in simp
    (map #(speaker %1 %2) (filter :name tracks) (cycle ["left" "right"]))]]
  
  [:div {:class "grid_4"}
+
+  [:a {:href "images/OctAmsClj12-big.png"}
+   [:img {:src "images/OctAmsClj12.png"}]]
+  
   [:p "Sponsored " [:span {:class "orange"} "by"]]
   (spacer)
   (button "http://www.backbase.com"
@@ -218,7 +225,6 @@ We will show you how to get your Clojure web applications running on it, in simp
            "O'Reilly Network"
            "")
 
-  [:p "Goodies and " [:span {:class "orange"} "props"]]
   
   ]
 
