@@ -106,21 +106,27 @@ We will explore the motivation for gradle, its aims and its philosophy, see a li
    {:time "17:00"
     :title "Coffee break"}
 
-   {:name "Giacomo Cosenza"
-    :avatar "images/speakers/gcosenza.png"
+   {:name "Rodrigo B. Pimentel / Chris Wilson"
+    :avatar "images/speakers/rbp-chris.png"
     :time "17:15"
-    :title "Teaching Clojure to math grads"
-    :bio "Coming soon"}
-
-   {:name "Rodrigo B. Pimentel"
-    :avatar (gravatar "3d8c280edaafd988742f45e81f89d24a")
-    :time "18:00"
     :title "First steps to running Clojure on Google AppEngine"
     :abstract "Google App Engine makes it really easy to develop and deploy web applications.
 
 We will show you how to get your Clojure web applications running on it, in simple terms. We will present a sample application to demonstrate howto use App Engine's services from Clojure."
-    :bio "Coming soon"}
+    :bio "Chris is something of a generalist, having worked in various fields -
+from IT teacher in a prison to senior development positions in banking
+and aerospace. Chris has been using Clojure on and off in personal
+projects for a couple of years.
+<br /><br />
+Rodrigo has been doing a lot of Python stuff for the last 8 years. He
+got his M.Sc. in mobile localisation, and is now studying simultaneous
+localisation and mapping. Rodrigo has played around with functional
+languages before, and has recently started on Clojure.
+<br /><br />
+Chris and Rodrigo are currently both core developers at Hyves"}
 
+   {:time "18:00"
+    :title "Closing, goodbye kisses and hugs"}
       
    ])
 
@@ -165,12 +171,16 @@ We will show you how to get your Clojure web applications running on it, in simp
             [:h1 "THE DUTCH Clo" [:i "j"] "ure EVENT"]
             [:p [:span {:class "orange"} "October Amsterdam Clojure"]
              " is the Dutch stage for functional geeks, lots of parenthesis and fun, all in a spicy "
-             [:span {:class "orange"} "LISP"] " sauce! The 2012 edition will be held at Backbase Headquarters in Amsterdam on " [:span {:class "orange"} "Saturday October 27th. "] "The event is always " [:span {:class "orange"} "FREE"]
+             [:span {:class "orange"} "LISP"] " sauce! The 2012 edition will be held at Backbase Headquarters in Amsterdam on " [:span {:class "orange"} "Saturday October 27th. "]
              [:p {:class "Desc"}
-             [:span {:class "site"}
-              [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
-               "Directions to the venue"]]]])
-
+              [:span {:class "site"}
+               [:a {:href "http://bit.ly/octamsclj-register"}
+                "Book your seat (for FREE!)"]]
+              [:span "&nbsp;&nbsp;&nbsp;&nbsp;"]
+              [:span {:class "site"}
+               [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
+                "Directions to the venue"]]]])
+     
      (panel {:link  "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"
              :title "HOW TO JOIN"
              :img   "images/map.png"
