@@ -230,6 +230,11 @@ Chris and Rodrigo are currently both core developers at Hyves"}
           "GOTO Conference"
           "GOTO Conference Amsterdam 2013")
   (spacer)
+  (button "http://www.adgoji.com/"
+          "images/sponsors/adgoji.png"
+          "ADGOJI"
+          "ADGOJI Mobile Audience Targeting")
+  (spacer)
   (button "http://www.oreilly.com"
            "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
            "O'Reilly Network"
