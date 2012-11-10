@@ -21,10 +21,6 @@
    [:div {:class "projectDescription"}
     panel-body]])
 
-(defn script [src]
-  [:script {:src src
-            :type "text/javascript"}])
-
 (defn button [href src title alt]
   [:a {:href href
         :title title}

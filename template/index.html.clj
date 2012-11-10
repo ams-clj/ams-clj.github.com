@@ -21,10 +21,6 @@
    [:div {:class "projectDescription"}
     panel-body]])
 
-(defn script [src]
-  [:script {:src src
-            :type "text/javascript"}])
-
 (defn button [href src title alt]
   [:a {:href href
         :title title}
@@ -81,13 +77,13 @@
   [:div {:class "grid_4"}
    [:h2 "Last " [:span {:class "orange"} "tweets"]]
    [:ul {:id "twitter_update_list"} [:li]]
-   (script "js/twitter.js")
-   (script "http://twitter.com/statuses/user_timeline/amsclj.json?callback=twitterCallback&amp;count=3")]
+   (js "js/twitter.js")
+   (js "http://twitter.com/statuses/user_timeline/amsclj.json?callback=twitterCallback&amp;count=3")]
 
   [:div {:class "grid_4"}
    [:h2 "Boost your " [:span {:class "orange"} "Clojure"]]
-   [:p "By far and large, teaching is the best way to learning. We will love to teach you Clo<i>j</i>ure,
-          as well as having you present your brand new project or library you just discovered."]
+   [:p "By and large, teaching is the best way to learning. We will love to teach you Clo<i>j</i>ure,
+          as well as having you on stage to present your brand new project or the library you just discovered."]
    [:h2 "Sponsors and " [:span {:class "orange"} "perks"]]
    (button "http://www.backbase.com"
           "images/sponsors/backbase.png"
