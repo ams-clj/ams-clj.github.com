@@ -1,76 +1,34 @@
-; @layout default
-; @title Home Page
-; @format xml
+; @layout landing
+; @foo bar
 
 ; //////////// FUNCTIONS //////////////////
 
-(defn arrow [direction]
-  [:a {:href "#"}
-   [:img {:src (str "images/featured-arrow-" direction ".png")
-          :alt ""}]])
-
-(defn panel [{:keys [link title img alt body]} & panel-body]
-  [:div {:class "panel"}
-
-   [:div {:class "projectImage"}
-    [:a {:href link
-         :title title}
-     [:img {:src img
-            :alt alt}]]]
-
-   [:div {:class "projectDescription"}
-    panel-body]])
-
-(defn button [href src title alt]
-  [:a {:href href
-        :title title}
-    [:img {:src src
-           :alt alt}]])
-
-;///////////// TEMPLATE //////////////////
-
-[:div {:class "container_12 medium"}
- [:div {:id "featured"}
-  [:div {:id "stripNavL0"
-         :class "featured-arrow"}
-   (arrow "left")]
-  
-   ; start the carousel
-  [:div {:id "slider"}
-   [:div {:id "sliderc"
-          :class "csw"}
-    [:div {:class "panelContainer"}
-
-     (panel {:link  "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"
-             :title "Meetup Page"
-             :img   "images/slider/00x.jpg"
-             :alt   "Official Meetup.com page"}
-            [:h1 "THE DUTCH Clo" [:i "j"] "ure COMMUNITY"]
-            [:p [:a {:href "http://clojure.org"
-                     :alt "Clojure official website"}
-                 "Clo" [:i "j"] "ure "]
-             "brings up the fun in functional programming languages. We  meet every second Wednesday of the month to talk about every thing Clo<i>j</i>ure, sometimes giving presentations, sometimes just having fun together."]
-            [:p {:class "Desc"}
-             [:span {:class "site"}
-              [:a {:href "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"}
-               "Meetup.com Page"]]])
-
-     (panel {:link  "/october.html"
+; sets up the carousel, overrides the one in landing.clj:
+(defn header-elems []
+  [{:image {:link  "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"
+            :title "Meetup Page"
+            :img   "images/slider/00x.jpg"
+            :alt   "Official Meetup.com page"}
+    :content [:span
+              [:h1 "THE DUTCH Clo" [:i "j"] "ure COMMUNITY"]
+              [:p [:a {:href "http://clojure.org"
+                       :alt "Clojure official website"}
+                   "Clo" [:i "j"] "ure "] 
+               "brings up the fun in functional programming languages. We  meet every second Wednesday of the month to talk about every thing Clo<i>j</i>ure, sometimes giving presentations, sometimes just having fun together."]
+              [:p {:class "Desc"}
+               [:span {:class "site"}
+                [:a {:href "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"}
+                 "Meetup.com Page"]]]]}
+   
+   {:image {:link  "/october.html"
              :title "October Amsterdam Clojure"
              :img   "images/slider/001.jpg"
-             :alt   "The biggest Clojure event in the Netherlands"}
-            [:h1 "October Amsterdam Clojure"]
-            [:p "Every year around October we celebrate yet another Meetup birthday with a bigger event. We're busy organizing the 2012 edition, please hold your horses and wait until we'll make the Call For Papers public. In the meanwhile, go ahead and draft your proposal, we know you have something beautiful to disclose!"]            
-            )
+            :alt   "The biggest Clojure event in the Netherlands"}
+    :content [:span
+              [:h1 "October Amsterdam Clojure"]
+              [:p "Every year around October we celebrate yet another Meetup birthday with a bigger event. We're busy organizing the 2012 edition, please hold your horses and wait until we'll make the Call For Papers public. In the meanwhile, go ahead and draft your proposal, we know you have something beautiful to disclose!"]]}])
 
-     ]]]
-
-  [:div {:id "stripNavR0"
-         :class "featured-arrow"}
-   (arrow "right")]]
-
-
- ]
+; //////////// TEMPLATES //////////////////
 
 [:div {:class "container_12 bottom"}
 
@@ -115,4 +73,3 @@
    ]
 
   [:div {:class "clear"}]]
-

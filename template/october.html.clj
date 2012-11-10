@@ -1,37 +1,63 @@
-; @layout default
-; @title #OctAmsClj
-; @format xml
+; @layout landing
 
 ; //////////// FUNCTIONS //////////////////
-
-(defn arrow [direction]
-  [:a {:href "#"}
-   [:img {:src (str "images/featured-arrow-" direction ".png")
-          :alt ""}]])
-
-(defn panel [{:keys [link title img alt body]} & panel-body]
-  [:div {:class "panel"}
-
-   [:div {:class "projectImage"}
-    [:a {:href link
-         :title title}
-     [:img {:src img
-            :alt alt}]]]
-
-   [:div {:class "projectDescription"}
-    panel-body]])
-
-(defn button [href src title alt]
-  [:a {:href href
-        :title title}
-    [:img {:src src
-           :alt alt}]])
 
 (defn gravatar [hash]
   (str "http://www.gravatar.com/avatar/" hash))
 
-(defn orange [text]
-  [:span {:class "orange"} text])
+(defn track [{:keys [time name title abstract]} class]
+  [:li {:class class}
+   [:span {:class "time"} time]
+   [:span {:class "slot"}
+    (if name
+      [:span {:style "border-bottom: 1px black dotted; cursor:help"
+              :title abstract}
+       title [:span {:style "float:right"} [:em name]]]
+      title)]])
+
+(defn speaker [{:keys [name avatar time title bio]} float]
+  [:li
+   [:div {:style "min-height: 100px; height: auto"}
+    [:img {:style (str "float:" float "; margin: 5px")
+           :src avatar}]
+    [:h4 name]
+    [:p bio]
+    [:p "&nbsp;"]]
+   [:hr]])
+
+; sets up the carousel, overrides the one in landing.clj:
+(defn header-elems []
+  [{:image {:link  "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"
+             :title "Meetup Page"
+             :img   "images/oct-logo.png"
+             :alt   "Official Meetup.com page"}
+    :content [:span
+              [:h1 "THE DUTCH Clo" [:i "j"] "ure EVENT"]
+              [:p [:span {:class "orange"} "October Amsterdam Clojure"]
+               " is the Dutch stage for functional geeks, lots of parenthesis and fun, all in a spicy "
+               [:span {:class "orange"} "LISP"] " sauce! The 2012 edition will be held at Backbase Headquarters in Amsterdam on " [:span {:class "orange"} "Saturday October 27th. "]
+               [:p {:class "Desc"}
+                [:span {:class "site"}
+                 [:a {:href "http://bit.ly/octamsclj-register"}
+                  "Book your seat (for FREE!)"]]
+                [:span "&nbsp;&nbsp;&nbsp;&nbsp;"]
+                [:span {:class "site"}
+                 [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
+                  "Directions to the venue"]]]]]}
+   
+   {:image {:link  "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"
+             :title "HOW TO JOIN"
+             :img   "images/map.png"
+             :alt   "The biggest Clojure event in the Netherlands"}
+    :content [:span
+              [:h1 "HOW TO JOIN"]
+              [:p "The event is completely " [:span {:class "orange"} "FREE"] " for anyone to join. Unfortunately, space limitations requires us to ask you to sign up. The official registration form will soon be available on our " [:span {:class "orange"} "Meetup"] " page."
+               [:br]
+               "Be sure to book your seat or you'll seriously risk to miss the hottest event this fall!"]
+              [:p {:class "Desc"}
+               [:span {:class "site"}
+                [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
+                 "Directions to the venue"]]]]}])
 
 (def tracks
   [
@@ -126,75 +152,7 @@ Chris and Rodrigo are currently both core developers at Hyves"}
       
    ])
 
-(defn track [{:keys [time name title abstract]} class]
-  [:li {:class class}
-   [:span {:class "time"} time]
-   [:span {:class "slot"}
-    (if name
-      [:span {:style "border-bottom: 1px black dotted; cursor:help"
-              :title abstract}
-       title [:span {:style "float:right"} [:em name]]]
-      title)]])
-
-(defn speaker [{:keys [name avatar time title bio]} float]
-  [:li
-   [:div {:style "min-height: 100px; height: auto"}
-    [:img {:style (str "float:" float "; margin: 5px")
-           :src avatar}]
-    [:h4 name]
-    [:p bio]
-    [:p "&nbsp;"]]
-   [:hr]])
-
-;///////////// TEMPLATE //////////////////
-
-[:div {:class "container_12 medium"}
- [:div {:id "featured"}
-  [:div {:id "stripNavL0"
-         :class "featured-arrow"}
-   (arrow "left")]
-  
-   ; start the carousel
-  [:div {:id "slider"}
-   [:div {:id "sliderc"
-          :class "csw"}
-    [:div {:class "panelContainer"}
-
-     (panel {:link  "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"
-             :title "Meetup Page"
-             :img   "images/oct-logo.png"
-             :alt   "Official Meetup.com page"}
-            [:h1 "THE DUTCH Clo" [:i "j"] "ure EVENT"]
-            [:p [:span {:class "orange"} "October Amsterdam Clojure"]
-             " is the Dutch stage for functional geeks, lots of parenthesis and fun, all in a spicy "
-             [:span {:class "orange"} "LISP"] " sauce! The 2012 edition will be held at Backbase Headquarters in Amsterdam on " [:span {:class "orange"} "Saturday October 27th. "]
-             [:p {:class "Desc"}
-              [:span {:class "site"}
-               [:a {:href "http://bit.ly/octamsclj-register"}
-                "Book your seat (for FREE!)"]]
-              [:span "&nbsp;&nbsp;&nbsp;&nbsp;"]
-              [:span {:class "site"}
-               [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
-                "Directions to the venue"]]]])
-     
-     (panel {:link  "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"
-             :title "HOW TO JOIN"
-             :img   "images/map.png"
-             :alt   "The biggest Clojure event in the Netherlands"}
-            [:h1 "HOW TO JOIN"]
-            [:p "The event is completely " [:span {:class "orange"} "FREE"] " for anyone to join. Unfortunately, space limitations requires us to ask you to sign up. The official registration form will soon be available on our " [:span {:class "orange"} "Meetup"] " page."
-             [:br]
-             "Be sure to book your seat or you'll seriously risk to miss the hottest event this fall!"]
-            [:p {:class "Desc"}
-             [:span {:class "site"}
-              [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
-               "Directions to the venue"]]])
-
-     ]]]
-
-  [:div {:id "stripNavR0"
-         :class "featured-arrow"}
-   (arrow "right")]]]
+; //////////// TEMPLATES //////////////////
 
 [:div {:class "container_12 bottom"}
 
