@@ -32,15 +32,8 @@
 
 [:div {:class "container_12 bottom"}
 
-  [:div {:class "grid_4"}
-   [:h2 "Last " [:span {:class "orange"} "tweets"]]
-   [:ul {:id "twitter_update_list"} [:li]]]
-
-  [:div {:class "grid_4"}
-   [:h2 "Boost your " [:span {:class "orange"} "Clojure"]]
-   [:p "By and large, teaching is the best way to learning. We will love to teach you Clo<i>j</i>ure,
-          as well as having you on stage to present your brand new project or the library you just discovered."]
-   [:h2 "Sponsors and " [:span {:class "orange"} "perks"]]
+ [:div {:class "grid_4"}
+  [:h2 "Sponsors and " [:span {:class "orange"} "perks"]]
    (button "http://www.backbase.com"
           "images/sponsors/backbase.png"
           "Backbase"
@@ -50,24 +43,30 @@
            "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
            "O'Reilly Network"
            "")]
-
-  [:div {:class "grid_4"}
-   [:h2 "Interested? " [:span {:class "orange"} "Get in touch"]]
-   
-   (button "https://twittwe.com/amsclj"
-           "images/contact/twitter.png"
-           "Twitter"
-           "")
-   
-   (button "https://github.com/ams-clj"
-           "images/contact/github.png"
-           "GitHub"
-           "")
-
-   (button "mailto:amsterdam-clojurians@googlegroups.com"
-           "images/contact/ggroup.png"
-           "Google Group"
-           "")
-   ]
-
-  [:div {:class "clear"}]]
+ 
+ [:div {:class "grid_4"}
+  [:h2 "Boost your " [:span {:class "orange"} "Clojure"]]
+  [:p "By and large, teaching is the best way to learning. We will love to teach you Clo<i>j</i>ure,
+          as well as having you on stage to present your brand new project or the library you just discovered."]
+  ]
+ 
+ [:div {:class "grid_4"}
+  [:h2 "Interested? " [:span {:class "orange"} "Get in touch"]]
+  
+  (button "https://twittwe.com/amsclj"
+          "images/contact/twitter.png"
+          "Twitter"
+          "")
+  
+  (button "https://github.com/ams-clj"
+          "images/contact/github.png"
+          "GitHub"
+          "")
+  
+  (button "mailto:amsterdam-clojurians@googlegroups.com"
+          "images/contact/ggroup.png"
+          "Google Group"
+          "")
+  ]
+ 
+ [:div {:class "clear"}]]
