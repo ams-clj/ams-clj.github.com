@@ -34,9 +34,7 @@
 
   [:div {:class "grid_4"}
    [:h2 "Last " [:span {:class "orange"} "tweets"]]
-   [:ul {:id "twitter_update_list"} [:li]]
-   (js "js/twitter.js")
-   (js "http://twitter.com/statuses/user_timeline/amsclj.json?callback=twitterCallback&amp;count=3")]
+   [:ul {:id "twitter_update_list"} [:li]]]
 
   [:div {:class "grid_4"}
    [:h2 "Boost your " [:span {:class "orange"} "Clojure"]]

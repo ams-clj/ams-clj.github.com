@@ -41,7 +41,6 @@
                      "js/FancyZoomHTML.js"
                      "js/functions.js"
                      "js/scripts.js"
-                     "js/twitter.js"
                      ]}
 
  ;; post file compile hook
