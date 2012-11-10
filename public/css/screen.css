@@ -115,7 +115,7 @@ a.currentPage{color:#fff!important;}
 /*section*/
 .medium {height: 320px;}
 .bottom {margin: 20px 0 0 0;}
-.footer {border-top: 1px #d0d0cf solid; text-align: center; margin: 40px 0 0 0;}
+.footer {text-align: center; margin: 40px 0 0 0;background:#F0F2EE}
 
 /*colors*/
 .orange {color: #f56b06;}
@@ -157,13 +157,5 @@ select{padding:10px;margin-bottom:15px;border:1px solid #aaa5a2;}
 option{padding:2px 0 0 5px;}
 .responseMessage{display:block;padding:8px;background:#e0e0e0;color:#9c5203;}
 
-/*twitter*/
-ul#twitter_update_list li {list-style-type:none;padding: 0 0 10px 0;color:#000;}
-ul#twitter_update_list .divisor {height:1px;border-bottom:1px solid #f1f0f0;}
-ul#twitter_update_list .data {color:#6b6c69;}
-ul#twitter_update_list .data:before {content:"#[";}
-ul#twitter_update_list .data:after {content:"]";}
-ul#twitter_update_list a:link, ul#twitter_update_list a:visited {color:#ab4b05;text-decoration:none;}
-ul#twitter_update_list a:hover, ul#twitter_update_list a:active {color:#ab4b05;text-decoration:underline;}
-
-
+/*footer*/
+.footer p {text-align:left}

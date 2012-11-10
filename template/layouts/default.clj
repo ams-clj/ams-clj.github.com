@@ -22,10 +22,31 @@
     [:div {:class "clear"}]]])
 
 (defn page-footer [text]
-  [:div {:class "container_12"}
-   [:p {:class "footer"}
-    text
-    [:br]]])
+  [:div {:class "footer"}
+   [:div {:class "container_12 bottom"}
+
+    [:br]
+    
+    [:div {:class "grid_4"}
+     [:h3 "About"]
+     [:p "Amsterdam Clojurians is the biggest Dutch community around Clojure. Out activities started back in September '09, and we proud ourselves to never have missed a month without a regular meetup. We are a free group and we welcome everyone to come and enjoy his time with a bunch of Clojure enthusiasts."]]
+    
+    [:div {:class "grid_4"}
+     [:h3 "Navigation"]
+     [:ul {:style "list-style-type: none"}
+      [:li [:a {:href "http://amsclj.nl"} "Home"]]
+      [:li [:a {:href "http://amsclj.nl/blog"} "Blog"]]
+      [:li [:a {:href "http://amsclj.nl/october.html"} "#OctAmsClj"]]
+      [:li [:a {:href "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"} "AmsClj @ Meetup.com"]]]]
+    
+    [:div {:class "grid_4"}
+     [:i "You can reach a point in LISP where you only write code that matters"]
+     [:p {:style "text-align: right"} [:i "Rich Hickey"]]]
+
+    [:br]
+    [:div {:class "clear"}]
+    text]
+   [:br]])
 
 
 (defn spacer []
