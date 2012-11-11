@@ -76,7 +76,7 @@ caption {background:#eee;}
 /*liste e tabelle*/
 li { margin: 0; line-height: 22px; }
 ul, ol {margin:0; }
-ul { list-style-type: disc; }
+ul { list-style-type: none; }
 ol { list-style-type:decimal; }
 dl { margin:0 0 1.5em 0; }
 dl dt { font-weight:bold; }
@@ -99,8 +99,8 @@ body  {background:url('../images/bg/bg.gif') repeat-x #fff;;font-size: 75%; colo
 ul#nav {width: 550px;height:46px;padding:0 0 0 0;margin:0 0 0 15px;}
 ul#nav li {line-height: 32px;width: 98px;margin-top: 20px;padding:30px 30px 0 0;margin:0;display:block;float:left; text-align: center;/*text-indent:-9999px;*/}
 ul#nav li a {height:46px;border:0;display:block;text-decoration:none;overflow:hidden;padding:0;margin:0;}
-li#home a, li#about a, li#october, li#portfolio a, li#, li#contact a{height:46px;}
-li#home a:hover, li#home a:focus, li#about a:hover, li#about a:focus, li#october :hover, li#october :focus,
+li#home a, li#about a, li#october a, li#blog a, li#portfolio a, li#, li#contact a{height:46px;}
+li#home a:hover, li#home a:focus, li#about a:hover, li#about a:focus, li#october :hover, li#october :focus, li#blog :hover, li#blog :focus
 li#portfolio a:hover, li#portfolio a:focus, li#contact a:hover, 
 li#contact a:focus{color: #000;height:46px; width:98px;background-image:url('../images/bg/toolbar.gif');background-repeat:no-repeat;background-position:0px -46px;}
 /*current page*/
@@ -159,3 +159,6 @@ option{padding:2px 0 0 5px;}
 
 /*footer*/
 .footer p {text-align:left}
+
+/*rounded*/
+.rounded {-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;}

@@ -1,5 +1,5 @@
 ; @layout landing
-; @foo bar
+; @title Home Page
 
 ; //////////// FUNCTIONS //////////////////
 

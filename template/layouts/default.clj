@@ -6,7 +6,7 @@
 (defn logo []
   [:div {:class "grid_4 header"}
    [:a {:href "/"}
-    [:img {:src "images/newflag.png"}]]])
+    [:img {:src "/images/newflag.png"}]]])
 
 (defn navigation-link
   [[text url selected]]
@@ -32,12 +32,7 @@
      [:p "Amsterdam Clojurians is the biggest Dutch community around Clojure. Out activities started back in September '09, and we proud ourselves to never have missed a month without a regular meetup. We are a free group and we welcome everyone to come and enjoy his time with a bunch of Clojure enthusiasts."]]
     
     [:div {:class "grid_4"}
-     [:h3 "Navigation"]
-     [:ul {:style "list-style-type: none"}
-      [:li [:a {:href "http://amsclj.nl"} "Home"]]
-      [:li [:a {:href "http://amsclj.nl/blog"} "Blog"]]
-      [:li [:a {:href "http://amsclj.nl/october.html"} "#OctAmsClj"]]
-      [:li [:a {:href "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"} "AmsClj @ Meetup.com"]]]]
+     [:h3 " "]]
     
     [:div {:class "grid_4"}
      [:i "You can reach a point in LISP where you only write code that matters"]
@@ -94,13 +89,15 @@
    (navigation-menu (map (fn [[text url id]]
                            ;(navigation-link [text url] (= text
                            ;(:title site)))
-                           (if (= text (:title site))
+                           (if (or
+                                (= text (:title site))
+                                (and (= "blog" id) (= "true" (:isblog site))))
                              [text url id true]
                              [text url id false]))
                          [["Home Page"  "/" "home"]
+                          ["Blog" "/blog.html" "blog"]
                           ["#OctAmsClj" "/october.html" "october"]
-                          ["The Meetup" "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/" "about"]
-                          ["Contact"    "mailto:amsterdam-clojurians@googlegroups.com" "contact"]]))
+                          ["The Meetup" "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/" "about"]]))
 
    [:div {:class "clear"}]
    ]
