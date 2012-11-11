@@ -1,20 +1,27 @@
-; @layout blog
+; @layout post
 ; @title The state of the (Dutch) Clojure union
 ; @tag meetup community events #OctAmsClj
 
-[:h2 (:title site)]
-
 [:p
- "We are now two weeks after the biggest " [:a {:href "/october.html"} "#OctAmsClj"] " conference we ever organized, and three full years of Clojure meetups in Amsterdam. It's time to sit back and have a look at the current status of the Clojure community in the Netherlands."]
+ "We are now two weeks after the biggest " [:a {:href "/october.html"} "#OctAmsClj"] " conference we ever organized, and three full years of Clojure meetups in Amsterdam. It's time to give a written log of what happened that day, then we'll sit back and have a look at the current status of the Clojure community in the Netherlands."]
 
 [:br]
 
 [:h3 "A beautiful Clojure day"]
 
 [:p
- "Anyone who attended can testify the vibrant enthusiasm pouring out of the rooms during the October Amsterdam Clojure conference. The first full day event ever organized by our group, and the third in the " (link "#OctAmsClj" "/october.html") " series, it attracted 50 people from all over the Netherlands, with someone coming even from over the border, all enjoying the sessions, the hallway chats and the greatly successful [un]conference. The whole crowd that day was composed roughly by two thirds of newcomers, the rest part of it being evenly spread between mid- and highly skilled developers, some of which are truly Clojure professionals."]
+ "Anyone who attended can testify the vibrant enthusiasm pouring out of the rooms during the October Amsterdam Clojure conference. The first full day event ever organized by our group, and the third in the " (link "#OctAmsClj" "/october.html") " series, it attracted 50 people from all over the Netherlands, with someone coming even from over the border, all enjoying the sessions, the hallway chats and the greatly successful [un]conference. The whole crowd that day was composed roughly by two thirds of newcomers, the rest part of it being evenly spread between mid- and highly skilled developers, some of which are truly Clojure professionals."
+
+ [:br]
+ 
+ [:embed {:type "application/x-shockwave-flash"
+          :src "https://picasaweb.google.com/s/c/bin/slideshow.swf"
+          :style "margin-left: auto; margin-right: auto; width:288; height: 192;"
+          :flashvars "host=picasaweb.google.com&hl=en_US&feat=flashalbum&RGB=0x000000&feed=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2Ffeed%2Fapi%2Fuser%2F110509433723658223149%2Falbumid%2F5806575855608103649%3Falt%3Drss%26kind%3Dphoto%26hl%3Den_US"
+          :pluginspage "http://www.macromedia.com/go/getflashplayer"}]]
 
 [:br]
+
 
 [:h3 "The Dutch landscape in Clojureland"]
 

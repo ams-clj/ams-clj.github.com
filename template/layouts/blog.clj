@@ -11,7 +11,9 @@
   (misaki.compiler.default.core/file->template-sexp post-file :allow-layout? false))
 
 (defn preview-post [{:keys [url title tag date file]}]
-  [:span (take 3 (trim file))
+  [:span
+   [:h2 title]
+   (take 3 (trim file))
    [:p (link "more..." url)]])
 
 (defn preview-posts [site]
