@@ -1,5 +1,5 @@
-; @title  misaki
-; @base   http://localhost:8080
+; @title  Amsterdam Clojurians Meetup
+; @base   http://amsclj.nl
 
 "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
 [:feed {:xmlns "http://www.w3.org/2005/Atom"}
