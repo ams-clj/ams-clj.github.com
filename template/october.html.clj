@@ -36,15 +36,8 @@
               [:h1 "THE DUTCH Clo" [:i "j"] "ure EVENT"]
               [:p [:span {:class "orange"} "October Amsterdam Clojure"]
                " is the Dutch stage for functional geeks, lots of parenthesis and fun, all in a spicy "
-               [:span {:class "orange"} "LISP"] " sauce! The 2012 edition will be held at Backbase Headquarters in Amsterdam on " [:span {:class "orange"} "Saturday October 27th. "]
-               [:p {:class "Desc"}
-                [:span {:class "site"}
-                 [:a {:href "http://bit.ly/octamsclj-register"}
-                  "Book your seat (for FREE!)"]]
-                [:span "&nbsp;&nbsp;&nbsp;&nbsp;"]
-                [:span {:class "site"}
-                 [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
-                  "Directions to the venue"]]]]]}
+               [:span {:class "orange"} "LISP"] " sauce! The 2012 edition was held at Backbase Headquarters in Amsterdam on " [:span {:class "orange"} "Saturday October 27th. "]
+               [:p {:class "Desc"}]]]}
    
    {:image {:link  "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"
              :title "HOW TO JOIN"
@@ -52,9 +45,9 @@
              :alt   "The biggest Clojure event in the Netherlands"}
     :content [:span
               [:h1 "HOW TO JOIN"]
-              [:p "The event is completely " [:span {:class "orange"} "FREE"] " for anyone to join. Unfortunately, space limitations requires us to ask you to sign up. The official registration form will soon be available on our " [:span {:class "orange"} "Meetup"] " page."
+              [:p "The event is completely " [:span {:class "orange"} "FREE"] " for anyone to join. Unfortunately, space limitations requires us to ask you to sign up. The official registration form will be available on our " [:span {:class "orange"} "Meetup"] " page."
                [:br]
-               "Be sure to book your seat or you'll seriously risk to miss the hottest event this fall!"]
+               "Be sure to book your seat or you'll seriously risk to miss the hottest Clojure event in the Netherlands!"]
               [:p {:class "Desc"}
                [:span {:class "site"}
                 [:a {:href "http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf"}
