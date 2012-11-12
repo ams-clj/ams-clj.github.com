@@ -32,7 +32,7 @@
      [:p "Amsterdam Clojurians is the biggest Dutch community around Clojure. Out activities started back in September '09, and we proud ourselves to never have missed a month without a regular meetup. We are a free group and we welcome everyone to come and enjoy his time with a bunch of Clojure enthusiasts."]]
     
     [:div {:class "grid_4"}
-     [:h3 " "]]
+     [:a {:href "https://github.com/liquidz/misaki"} [:img {:src "/images/poweredby-misaki.png"}]]]
     
     [:div {:class "grid_4"}
      [:i "You can reach a point in LISP where you only write code that matters"]

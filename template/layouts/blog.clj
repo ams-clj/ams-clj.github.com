@@ -12,12 +12,12 @@
 
 (defn preview-post [{:keys [url title tag date file]}]
   [:span
-   [:h2 title]
-   (take 3 (trim file))
+   [:h2 [:a {:href url} title]]
+   (take 2 (trim file))
    [:p (link "more..." url)]])
 
 (defn preview-posts [site]
-  (map preview-post (take 5 (:posts site))))
+  (drop-last (interleave (map preview-post (take 5 (:posts site))) (repeat [:hr]))))
 
 ; ///////////////// TEMPLATES ///////////////////
 
