@@ -53,7 +53,7 @@
  [:div {:class "grid_4"}
   [:h2 "Interested? " [:span {:class "orange"} "Get in touch"]]
   
-  (button "https://twittwe.com/amsclj"
+  (button "https://twitter.com/amsclj"
           "images/contact/twitter.png"
           "Twitter"
           "")
