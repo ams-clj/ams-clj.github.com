@@ -15,7 +15,7 @@
 
  ;; dev server port
  ;;   default value: 8080
- :port 9080
+ :port 80
 
  ;; site language
  ;;   default value: "en"

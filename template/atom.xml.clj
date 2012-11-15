@@ -8,7 +8,7 @@
  [:link {:href (:base site)}]
  [:updated (date->xml-schema (:date site))]
  [:id (:base site)]
- [:author [:name "@uochan"]]
+ [:author [:name "@amsclj"]]
 
  (for [post (:posts site)]
    [:entry
