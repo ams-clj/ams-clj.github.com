@@ -88,7 +88,7 @@ while Systems live in the real world. Failures can only be addressed at the syst
 
 [:p [:strong "Paul DeGrandis"] " talked about using ClojureScript in the browser, and stressed the importance of learning how to use the goog library. Documentation on goog is rare: there's only one book and the newsgroup. Still, its features are still worth it. The goog libary handles browser differences really well, but once you get to the HTML5 stuff it gets tricky. The goog library has two calling conventions that are different to require and call. Still, you need to understand this difference. You can use the protocols and the handy functions in " [:a {:href "https://github.com/shoreleave"} "shoreleave"] " to avoid working directly  with the goog library. This gives you loosely coupled code and inverted control. If you run into troubles on the client, you can always shift the work to the server. It is of course always fine to use other libraries like jQuery if you need to."]
 
-[:p [:strong "Conrad Barski"] " demonstrated " [:a {:href "https://github.com/drcode/webfui"}] ", a client side web development framework. It stored the DOM in atoms using EDN as the representation. It automatically keeps changes in the EDN model in sync with the browser DOM. It allows you to define functions to be run when the state changes."]
+[:p [:strong "Conrad Barski"] " demonstrated " [:a {:href "https://github.com/drcode/webfui"} "webfui"] ", a client side web development framework. It stored the DOM in atoms using EDN as the representation. It automatically keeps changes in the EDN model in sync with the browser DOM. It allows you to define functions to be run when the state changes."]
 
 [:p [:strong "Alan Dipert"] " did a lightning talk over Functional Reactive Programming (FRP) in ClojureScript using " [:a {:href "https://github.com/alandipert/flapjax-demo"} "Flapjax"] "."]
 
@@ -111,5 +111,5 @@ while Systems live in the real world. Failures can only be addressed at the syst
 [:div
  [:img {:style "float:left; padding: 10px" :src "https://secure.gravatar.com/avatar/284b1d54e55bf79734cc389aa56ff9f4?s=100"}]
  [:br]
- [:i {:style "margin: 10px"} [:strong "Walter van der Laan "] "Put the bio here"]]
+ [:i {:style "margin: 10px"} [:strong "Walter van der Laan "] " is cofounder of Fincite, a pure Clojure startup with a focus on business analysis"]]
 
