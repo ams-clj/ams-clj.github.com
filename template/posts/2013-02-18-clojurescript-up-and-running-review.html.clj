@@ -8,17 +8,21 @@
 
 ; //////// TEMPLATES ////////
 
-[:img {:class "blog-img"
-       :src "http://akamaicovers.oreilly.com/images/0636920025139/cat.gif"
-       :style "float: right; margin: 0px 0px 10px 10px"}]
+[:a {:href "http://bit.ly/cljs-uprun"}
+ [:img {:class "blog-img"
+        :src "http://akamaicovers.oreilly.com/images/0636920025139/cat.gif"
+        :style "float: right; margin: 0px 0px 10px 10px"}]]
 
-[:blockquote "The copy of ClojureScript: Up and Running I read was provided to the
-Amsterdam Clojure meetup by O’Reilly as part of their " [:a {:href "http://oreilly.com/ug/"} "UserGroup"]
+[:blockquote "The copy of "
+ [:a {:href "http://bit.ly/cljs-uprun"}
+  "ClojureScript: Up and Running"]
+ " I read was provided to the Amsterdam Clojure meetup by O’Reilly as part of their " [:a {:href "http://oreilly.com/ug/"} "UserGroup"]
 " program."]
 
 [:p "My first impression of the book was that it was nice and thin - at
 under 100 pages of content its stays true to the “up and running”
-concept.  The book is aimed at someone who’s new to ClojureScript,
+concept.  The book is aimed at someone who’s new to "
+ [:a {:href "https://github.com/clojure/clojurescript"} "ClojureScript"] ",
 whether or not they’ve used Clojure before, although it does require a
 basic knowledge of JavaScript.  The book is structured in such a way
 that someone who already has Clojure knowledge can skip a third to
@@ -27,10 +31,13 @@ parts."]
 
 [:p "After explaining the rationale behind ClojureScript, the book starts
 off with a short example to get you started with ClojureScript and the
-development process.  It uses the lein-cljsbuild Leiningen plugin to
+development process.  It uses the "
+ [:a {:href "https://github.com/emezeske/lein-cljsbuild"} "lein-cljsbuild"]
+" Leiningen plugin to
 simplify the build and gets you going with minimal explanation.  From
 there it dives deeper into the compiler, the configuration of it and
-its relationship with the Google Closure Compiler."]
+its relationship with the "
+ [:a {:href "https://developers.google.com/closure/compiler/"} "Google Closure Compiler"] "."]
 
 [:p "The next five chapters cover the basics of the ClojureScript language.
  These chapters provide a nice introduction to the ClojureScript
@@ -71,7 +78,7 @@ experience in, but certainly it will give them the knowledge to get
 going with ClojureScript, so will still be a valuable book for them."]
 
 [:p "So, bearing that small caveat in mind, I would recommend this book to
-anyone wanting to get a good introduction to " [:i "ClojureScript"] "."]
+anyone wanting to get a good introduction to ClojureScript."]
 
 [:hr]
 
