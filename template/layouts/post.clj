@@ -1,6 +1,22 @@
 ; @layout  blog
 ; @title   post default title
 
+;/////////// FUNCTIONS /////////////
+
+; @param avatar : a string with the URL to the avatar
+; @param name   : the string with the full name
+; @param desc   : the long text with the description
+; @param twitter: the twitter handle
+(defn author [avatar name desc twitter]
+  [:div
+   [:img {:style "float:left; padding: 10px" :src avatar}]
+   [:br]
+   [:i {:style "margin: 10px"} [:strong name] desc]
+   [:br] [:br]
+   [:a {:href (str "https://twitter.com/" twitter)} (str "@" twitter)]])
+
+;/////////// TEMPLATES /////////////
+
 [:h2 (:title site)]
 
 [:div {:class "post"} contents

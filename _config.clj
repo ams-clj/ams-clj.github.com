@@ -28,8 +28,8 @@
         :css        ["/css/ie.css"
                      ;"/css/print.css"
                      "/css/programme.css"
-                     "/css/project.css"
                      "/css/screen.css"
+                     "/css/project.css"
                      "/css/960.css"
                      ]
         :js         ["js/jquery-1.3.1.min.js"
@@ -95,4 +95,3 @@
  ;;   default value: "default"
  :compiler "default"
  }
-

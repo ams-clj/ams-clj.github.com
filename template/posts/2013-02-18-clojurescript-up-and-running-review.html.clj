@@ -82,12 +82,10 @@ anyone wanting to get a good introduction to ClojureScript."]
 
 [:hr]
 
-[:div
- [:img {:style "float:left; padding: 10px" :src "/images/chris.jpg"}]
- [:br]
- [:i {:style "margin: 10px"} [:strong "Chris Wilson"] " is something of a generalist, having worked in various fields -
+(author "/images/chris.jpg"
+        "Chris Wilson"
+        " is something of a generalist, having worked in various fields -
 from IT teacher in a prison to senior development positions in banking
 and aerospace. Chris has been using Clojure on and off in personal
-projects for a couple of years."]
- [:br] [:br]
- [:a {:href "https://twitter.com/minleychris"} "@minleychris"]]
+projects for a couple of years."
+        "minleychris")

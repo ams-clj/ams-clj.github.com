@@ -12,7 +12,7 @@
 
 (defn preview-post [{:keys [url title tag date file]}]
   [:span
-   [:h2 [:a {:href url} title]]
+   [:h2 {:class "blog-preview"} [:a {:href url} title]]
    (take 2 (trim file))
    [:p (link "more..." url)]])
 
@@ -20,7 +20,6 @@
   (drop-last (interleave (map preview-post (take 5 (:posts site))) (repeat [:hr]))))
 
 ; ///////////////// TEMPLATES ///////////////////
-
 
 [:div {:class "container_12 bottom"}
  [:div {:class "grid_8 rounded"  :style "background-color: white; border: 1px solid #F0F2EE"}
@@ -35,4 +34,3 @@
    [:h3 {:class "orange"} "Tags"]
    (tag-list)]]
  [:div {:class "clear"}]]
-

@@ -13,7 +13,7 @@
  "Anyone who attended can testify the vibrant enthusiasm pouring out of the rooms during the October Amsterdam Clojure conference. The first full day event ever organized by our group, and the third in the " (link "#OctAmsClj" "/october.html") " series, it attracted 50 people from all over the Netherlands, with someone coming even from over the border, all enjoying the sessions, the hallway chats and the greatly successful [un]conference. The whole crowd that day was composed roughly by two thirds of newcomers, the rest part of it being evenly spread between mid- and highly skilled developers, some of which are truly Clojure professionals."
 
  [:br]
- 
+
  [:embed {:type "application/x-shockwave-flash"
           :src "https://picasaweb.google.com/s/c/bin/slideshow.swf"
           :style "margin-left: auto; margin-right: auto; width:288; height: 192;"
@@ -56,8 +56,12 @@
 
 [:br]
 
-[:p 
+[:p
  "and the list could go on forever. Still, this year " [:a {:href "http://euroclojure.com/2012/"} "EuroClojure"] " conference maked the quantum leap of the language to the bigger circuit. Even more, it wasn't the only one conference dedicated solely to Clojure: we did our job with " (link "#OctAmsClj" "/october.html") " and " (link "ClojureX" "http://skillsmatter.com/event/scala/clojure-exchange-2012") " is upcoming in London. The agenda is definitely getting busier, and it will hopefully boost the widespread adoption of Clojure on this side of the Ocean and ultimately in the Netherlands."]
 
-[:br]
+[:hr]
 
+(author "http://www.gravatar.com/avatar/de4b1a10e60f6a0202e0f3c82f70fb5f.jpg?s=150"
+        "Amsterdam Clojurians"
+        " is the biggest Clojure community in the Netherlands. Out activities started back in September '09, and we pride ourselves to never have let a month go without our regular meetup ever since. We are a free group and we welcome everyone to come and enjoy his time with a bunch of Clojure enthusiasts."
+        "amsclj")

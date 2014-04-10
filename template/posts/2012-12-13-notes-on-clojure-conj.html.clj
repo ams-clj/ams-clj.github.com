@@ -108,8 +108,7 @@ while Systems live in the real world. Failures can only be addressed at the syst
 
 [:hr]
 
-[:div
- [:img {:style "float:left; padding: 10px" :src "https://secure.gravatar.com/avatar/284b1d54e55bf79734cc389aa56ff9f4?s=100"}]
- [:br]
- [:i {:style "margin: 10px"} [:strong "Walter van der Laan "] " is cofounder of Fincite, a pure Clojure startup with a focus on business analysis"]]
-
+(author "https://secure.gravatar.com/avatar/284b1d54e55bf79734cc389aa56ff9f4?s=150"
+        "Walter van der Laan"
+        " is cofounder of Fincite, a pure Clojure startup with a focus on business analysis"
+        "wvdlaan")

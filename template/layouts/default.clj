@@ -26,14 +26,14 @@
    [:div {:class "container_12 bottom"}
 
     [:br]
-    
+
     [:div {:class "grid_4"}
      [:h3 "About"]
-     [:p "Amsterdam Clojurians is the biggest Dutch community around Clojure. Out activities started back in September '09, and we proud ourselves to never have missed a month without a regular meetup. We are a free group and we welcome everyone to come and enjoy his time with a bunch of Clojure enthusiasts."]]
-    
+     [:p "Amsterdam Clojurians is the biggest Dutch community around Clojure. Out activities started back in September '09, and we pride ourselves to never have let a month go without our regular meetup ever since. We are a free group and we welcome everyone to come and enjoy his time with a bunch of Clojure enthusiasts."]]
+
     [:div {:class "grid_4"}
      [:a {:href "https://github.com/liquidz/misaki"} [:img {:src "/images/poweredby-misaki.png"}]]]
-    
+
     [:div {:class "grid_4"}
      [:i "You can reach a point in LISP where you only write code that matters"]
      [:p {:style "text-align: right"} [:i "Rich Hickey"]]]
@@ -68,7 +68,7 @@
 
   [:link {:rel   "shortcut icon"
           :href  "/favicon.ico"}]
-  
+
   [:link {:href  "/atom.xml"
           :rel   "alternate"
           :title (:title site)
@@ -81,8 +81,8 @@
  [:body
 
   [:div {:class "container_12"}
-   
-                                        ; site logo 
+
+                                        ; site logo
    (logo)
 
                                         ; main navigation menu
@@ -103,8 +103,8 @@
    ]
 
   contents
-  
-  (page-footer "Copyright 2012 - 2013 by <strong>Amsterdam Clojurians</strong>")
+
+  (page-footer "Copyright 2012 - 2014 by <strong>Amsterdam Clojurians</strong>")
 
   [:script {:type "text/javascript"}
    "var _gaq = _gaq || [];
@@ -119,8 +119,8 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 "]
-  
-  
+
+
   ] ; /body
 
  ] ; /html
