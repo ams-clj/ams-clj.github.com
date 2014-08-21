@@ -3,6 +3,9 @@
 
 ; //////////// FUNCTIONS //////////////////
 
+(defn- rss-widget []
+  (slurp "public/js/rss.js"))
+
 ; sets up the carousel, overrides the one in landing.clj:
 (defn header-elems []
   [{:image {:link  "http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/"
@@ -42,7 +45,12 @@
    (button "http://www.oreilly.com"
            "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
            "O'Reilly Network"
-           "")]
+           "")
+  
+  (spacer)
+  [:div {} (rss-widget)] 
+
+  ]
 
  [:div {:class "grid_4"}
   [:h2 "Boost your " [:span {:class "orange"} "Clojure"]]
