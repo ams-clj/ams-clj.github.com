@@ -46,11 +46,11 @@
            "http://ug.oreilly.com/banners/ug_ad_250_viguy.gif"
            "O'Reilly Network"
            "")
-  
-  (spacer)
-  [:div {} (rss-widget)] 
 
-  ]
+  (spacer)
+  [:h2 "Clojure " [:span {:class "orange"} "Jobs"]]
+
+  (rss-widget)]
 
  [:div {:class "grid_4"}
   [:h2 "Boost your " [:span {:class "orange"} "Clojure"]]
